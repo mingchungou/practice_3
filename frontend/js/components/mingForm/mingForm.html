@@ -1,0 +1,14 @@
+<form ng-submit="$ctrl.onSubmit()">
+    <div class="form-group row" ng-repeat="input in $ctrl.data.inputs">
+        <label for="{{input.id}}" class="col-12 form-control-label">{{input.formLabel}}</label>
+        <div class="col-12 input-group">
+            <span class="input-group-addon" ng-if="input.icon">
+                <i class="fa {{input.icon.style}} {{input.icon.extraClass}}" aria-hidden="true"></i>
+            </span>
+            <input type="{{input.type}}" class="form-control {{input.formControl.inputClass}}" id="{{input.id}}" ng-model="input.model" placeholder="{{input.placeholder}}" required />
+        </div>
+        <div class="col-12 form-control-feedback" ng-if="input.formControl">{{input.formControl.feedback}}</div>
+    </div>
+    <button type="submit" class="btn btn-primary">{{$ctrl.data.submitText}}</button>
+    <div class="navigateTo" ng-if="$ctrl.data.navigation" ng-bind-html="$ctrl.data.navigation.html"></div>
+</form>

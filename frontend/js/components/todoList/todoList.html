@@ -1,0 +1,26 @@
+<ul class="todo-list">
+    <li ng-repeat="todo in $ctrl.data | orderBy: '-created'">
+        <div class="row">
+            <div class="priority-content col-2" ng-switch="todo.priority">
+                <i class="fa fa-arrow-up" aria-hidden="true" ng-switch-when="high"></i>
+                <i class="fa fa-minus" aria-hidden="true" ng-switch-when="medium"></i>
+                <i class="fa fa-arrow-down" aria-hidden="true" ng-switch-default></i>
+            </div>
+            <div class="activity-content col-8 row p-3">
+                <div class="activity col-md-4">
+                    <p>{{todo.activity}}</p>
+                </div>
+                <div class="time col-md-5">
+                    <p>{{todo.fromX | date: "short"}}</p>
+                </div>
+                <div class="status col-md-3" ng-switch="todo.status">
+                    <p ng-switch-when="1">Uncompleted</p>
+                    <p ng-switch-default>Completed</p>
+                </div>
+            </div>
+            <div class="edit-content col-2">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </div>
+        </div>
+    </li>
+</ul>

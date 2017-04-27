@@ -1,0 +1,195 @@
+@import "variables";
+
+html {
+    font-size: 15px;
+}
+
+body {
+    color: $textColor;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/************** Primary button Style *****************/
+.btn-primary {
+    border-color: transparent;
+    background-color: $primaryColor;
+    color: $whiteColor;
+    transition: all 0.5s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: transparent;
+        box-shadow: none;
+        background-color: $secondaryColor;
+        color: $whiteColor;
+    }
+}
+
+/************** Alert Style *****************/
+.alert {
+    visibility: hidden;
+    @include position-absolute((top: 1rem, left: 0)...);
+    width: 60%;
+    border-radius: 0 5px 5px 0;
+    text-align: left;
+    opacity: 0;
+
+    &.show {
+        animation: fedeIn 2s ease-in-out forwards;
+    }
+
+    &.hide {
+        animation: fedeOut 2s ease-in-out forwards;
+    }
+}
+
+/************** Main header Style *****************/
+.main-header {
+    padding: 0.5rem 0;
+    background-color: $textColor;
+    color: $whiteColor;
+    transition: all 0.5s ease;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        h1 {
+            font-weight: bold;
+        }
+
+        .icon {
+            margin-left: auto;
+            border: 0;
+            background-color: transparent;
+            color: $whiteColor;
+            font-size: 2rem;
+
+            &:focus,
+            .fa:focus {
+                outline: 0;
+            }
+        }
+    }
+}
+
+/************** Login and signup *****************/
+.login-content,
+.signup-content {
+    @include flexbox((direction: column,
+        justify: center,
+        align: center)...);
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $primaryColorDark;
+    text-align: center;
+
+    h1 {
+        color: $whiteColor;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+    }
+
+    .container {
+        form {
+            padding: 1rem;
+            margin: 0 auto;
+            max-width: 350px;
+            border-radius: 5px;
+            background-color: $whiteColor;
+
+            .form-control-label {
+                text-align: left;
+            }
+
+            .input-group-addon {
+                background-color: $primaryColor;
+                color: $whiteColor;
+            }
+
+            .form-control-feedback {
+                display: none;
+                text-align: left;
+            }
+
+            .btn-primary {
+                margin: 0.5rem 0 1rem;
+                width: 80%;
+            }
+
+            a {
+                color: $primaryColor;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $secondaryColor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/************** Start *****************/
+.start-content .todo-content .container {
+    position: relative;
+
+    h2 {
+        margin-top: 11rem;
+        color: $secondaryColor;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .todo-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li > .row {
+            margin: 0 !important;
+            border-top: 1px solid $grayColor;
+
+            .priority-content,
+            .edit-content {
+                @include flexbox((direction: column,
+                    justify: center,
+                    align: center)...);
+            }
+
+            .activity-content {
+                @include flexbox((justify: center,
+                    align: center)...);
+                text-align: center;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .slap-image {
+        position: absolute;
+        top: -85px;
+        left: 0;
+    }
+}
+
+/************** Media Queeries *****************/
+@media (max-width: 576px) {
+    .alert {
+        width: 95%;
+    }
+
+    .start-content .todo-content .container {
+        h2 {
+            text-align: right;
+        }
+    }
+}

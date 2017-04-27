@@ -1,0 +1,61 @@
+create database mydb;
+use mydb;
+
+//Table user
+drop table if exists user;
+create table user (
+	name varchar(255),
+    email varchar(255),
+    password varchar(16),
+    primary key (name)
+);
+
+truncate user;
+select * from user;
+
+//Table todo
+drop table if exists todo;
+create table todo (
+	id int auto_increment,
+	activity varchar(255),
+    priority varchar(10),
+    fromX timestamp,
+	created timestamp,
+	updated timestamp,
+    status boolean,
+    primary key (id)
+);
+
+truncate todo;
+select * from todo;
+
+//Trigger to check the priority data
+drop trigger if exists check_priority;
+delimiter //
+create trigger check_priority before insert on todo for each row
+begin
+	declare prio varchar(10);
+	set prio = lower(new.priority);
+	
+	if (prio != "low" and prio != "medium" and prio != "high") then
+		signal sqlstate '45000' set message_text = "You can only set low, medium or high in priority space";
+	else
+		set new.created = now();
+		set new.updated = now();
+		set new.priority = prio;
+	end if;
+end;//
+
+drop trigger if exists refresh_updated;
+delimiter //
+create trigger refresh_updated before update on todo for each row set new.updated = now();
+
+
+
+
+Execute statement:
+	
+insert into todo (activity, priority, fromX, status) values
+	("Study", "high", "2017-04-27 9:00", 0);
+	
+update todo set activity = "Do exercise" where id = 1;

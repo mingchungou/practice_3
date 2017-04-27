@@ -1,0 +1,17 @@
+<section class="start-content mb-3">
+    <header id="main-header" class="main-header fixed-top" role="banner">
+        <div class="container">
+            <h1>Ming's Stuff</h1>
+            <button class="icon px-2" type="button" ng-click="$ctrl.logout()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+    <main class="todo-content" ng-show="$ctrl.todoList">
+        <article class="container">
+            <h2 class="mb-3">My Activities</h2>
+            <todo-list data="$ctrl.todoList"></todo-list>
+            <img class="slap-image" src="images/slap.gif" alt="slape image" width="200" height="130" />
+        </article>
+    </main>
+</section>
