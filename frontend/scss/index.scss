@@ -178,6 +178,8 @@ body {
         position: absolute;
         top: -85px;
         left: 0;
+        width: 200px;
+        height: 130px
     }
 }
 
@@ -187,6 +189,20 @@ body {
         width: 95%;
     }
 
+    .start-content .todo-content .container {
+        h2 {
+            margin-top: 9rem;
+        }
+
+        .slap-image {
+            top: -57px;
+            width: 170px;
+            height: 100px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
     .start-content .todo-content .container {
         h2 {
             text-align: right;

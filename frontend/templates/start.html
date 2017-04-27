@@ -10,8 +10,8 @@
     <main class="todo-content" ng-show="$ctrl.todoList">
         <article class="container">
             <h2 class="mb-3">My Activities</h2>
-            <todo-list data="$ctrl.todoList"></todo-list>
-            <img class="slap-image" src="images/slap.gif" alt="slape image" width="200" height="130" />
+            <todo-list data="$ctrl.todoList" expression="{{$ctrl.orderTodo.expression}}" reverse="{{$ctrl.orderTodo.reverse}}"></todo-list>
+            <img class="slap-image" src="images/slap.gif" alt="slape image" ng-click="$ctrl.changeOrder()" />
         </article>
     </main>
 </section>

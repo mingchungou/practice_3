@@ -1,5 +1,5 @@
 <ul class="todo-list">
-    <li ng-repeat="todo in $ctrl.data | orderBy: '-created'">
+    <li ng-repeat="todo in $ctrl.data | orderBy: $ctrl.expression : $ctrl.reverse">
         <div class="row">
             <div class="priority-content col-2" ng-switch="todo.priority">
                 <i class="fa fa-arrow-up" aria-hidden="true" ng-switch-when="high"></i>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activities>
+	<activity>
+		<id>1</id>
+		<activity>Play soccer</activity>
+		<priority>low</priority>
+		<fromX>2017-04-30 10:00</fromX>
+		<created>2017-04-26 22:26:40</created>
+		<updated>2017-04-26 22:26:40</updated>
+		<status>1</status>
+	</activity>
+	<activity>
+		<id>2</id>
+		<activity>Having lunch with friends</activity>
+		<priority>medium</priority>
+		<fromX>2017-04-29 12:30</fromX>
+		<created>2017-04-26 22:27:55</created>
+		<updated>2017-04-26 22:27:55</updated>
+		<status>1</status>
+	</activity>
+	<activity>
+		<id>3</id>
+		<activity>Go running</activity>
+		<priority>high</priority>
+		<fromX>2017-04-26 19:00</fromX>
+		<created>2017-04-26 09:12:23</created>
+		<updated>2017-04-26 09:12:23</updated>
+		<status>0</status>
+	</activity>
+	<activity>
+		<id>4</id>
+		<activity>Having interview</activity>
+		<priority>high</priority>
+		<fromX>2017-04-25 14:00</fromX>
+		<created>2017-04-25 21:50:01</created>
+		<updated>2017-04-25 21:50:01</updated>
+		<status>0</status>
+	</activity>
+</activities>
