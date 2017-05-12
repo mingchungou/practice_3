@@ -5,10 +5,10 @@ use mydb;
 /******** Table user *********/
 drop table if exists user;
 create table user (
-	name varchar(255),
-    email varchar(255) not null,
-    password varchar(16) not null,
-    primary key (name)
+    id int auto_increment,
+    name varchar(50) not null,
+    password varchar(255) not null,
+    primary key (id)
 );
 
 truncate user;
@@ -21,12 +21,12 @@ drop table if exists todo;
 create table todo (
 	id int auto_increment,
 	activity varchar(255) not null,
-    priority varchar(10) not null,
-    fromX timestamp not null,
+	priority varchar(10) not null,
+	fromX timestamp not null,
 	created timestamp not null,
 	updated timestamp not null,
-    status boolean not null,
-    primary key (id)
+	status boolean not null,
+	primary key (id)
 );
 
 truncate todo;

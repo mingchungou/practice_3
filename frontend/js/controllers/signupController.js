@@ -15,13 +15,6 @@ app.controller("signupController", ["$http", "$location",
                 model: "",
                 placeholder: "Enter your name"
             }, {
-                type: "email",
-                id: "email",
-                formLabel: "Email",
-                icon: { style: "fa-envelope" },
-                model: "",
-                placeholder: "Enter your email"
-            }, {
                 type: "password",
                 id: "password",
                 formLabel: "Password",

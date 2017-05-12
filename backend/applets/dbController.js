@@ -1,6 +1,6 @@
 var mysql = require("mysql"),
 	connection;
-	
+
 var init = function() {
 	connection = mysql.createConnection({
 		host: "127.0.0.1",
@@ -9,7 +9,7 @@ var init = function() {
 		database: "mydb"
 	});
 };
-	
+
 var start = function() {
 	connection.connect(function(err) {
 		if (err) {
@@ -42,19 +42,25 @@ var selectQuery = function(request, values) {
 };
 
 module.exports.login = function(values) {
-	var request = "select * from user where email = ? and password = ?";
+	var request = "select * from user where name = ? and password = ?";
 
 	return selectQuery(request, values);
 };
 
-module.exports.findUser = function(values) {
-	var request = "select * from user where email = ?";
+module.exports.findUser = function(value) {
+	var request = "select * from user where name = ?";
 
-	return selectQuery(request, values);
+	return selectQuery(request, value);
 };
-	
+
+module.exports.getUsers = function() {
+	var request = "select * from user";
+
+	return selectQuery(request, []);
+};
+
 module.exports.signup = function(values) {
-	var request = "insert into user (name, email, password) values (?, ?, ?)";
+	var request = "insert into user (name, password) values (?, ?)";
 
 	return selectQuery(request, values);
 };

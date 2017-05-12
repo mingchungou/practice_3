@@ -60,6 +60,10 @@ app.config(["$routeProvider", "$locationProvider", "$httpProvider",
     }
 ]);
 
+angular.element(function() {
+    angular.bootstrap(document, ["theming"]);
+});
+
 //decode token
 var urlBase64Decode = function(str) {
     var output = str.replace('-', '+').replace('_', '/');

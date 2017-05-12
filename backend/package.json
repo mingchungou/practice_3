@@ -9,6 +9,7 @@
   "author": "Ming Chung Ou",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.1",
     "body-parser-xml": "^1.1.0",
     "cors": "^2.8.3",

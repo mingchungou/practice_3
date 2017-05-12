@@ -6,13 +6,13 @@ var express = require("express"),
 	fs = require("fs"),
 	path = require("path"),
 	xml2js = require("xml2js");
-	
+
 router.use(middlewares.checkToken);
 
 router.route("/activities/:type")
 	.get(function(req, res) {
 		var type = req.params.type.toLowerCase();
-		
+
 		if (type === "db") {
 			mysql.getActivities().then(function(data) {
 				res.status(200);
@@ -22,7 +22,7 @@ router.route("/activities/:type")
 			});
 		} else if (type === "xml" || type === "json") {
 			var file = type === "json" ? "todo.json" : "todo.xml";
-	
+
 			fs.readFile(path.join(__dirname, "../localData", file), "utf8", function(err, fileData) {
 				if (err) {
 					services.errorHandler(res, err);

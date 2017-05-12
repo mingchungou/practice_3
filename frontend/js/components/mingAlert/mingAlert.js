@@ -34,7 +34,7 @@ app.controller("mingAlertController", ["$scope", "$timeout",
                         self.message = "Unfortunately we can't identify the user, do you have an account? If not, go to signup.";
                         break;
                     case "User already exists":
-                        self.message = "An account is created using this email. Go to login!";
+                        self.message = "An account is created using this name. Go to login!";
                         break;
                 }
 

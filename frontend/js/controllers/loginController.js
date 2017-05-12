@@ -7,12 +7,12 @@ app.controller("loginController", ["$http", "$location",
         this.alertType = "";
         this.formData = {
             inputs: [{
-                type: "email",
-                id: "email",
-                formLabel: "Email",
+                type: "text",
+                id: "name",
+                formLabel: "Name",
                 icon: { style: "fa-envelope" },
                 model: "",
-                placeholder: "Enter your email"
+                placeholder: "Enter your name"
             }, {
                 type: "password",
                 id: "password",
@@ -32,7 +32,7 @@ app.controller("loginController", ["$http", "$location",
 
         this.submit = function(parameters) {
             self.alertType = "";
-            
+
             $http({
                 method: "POST",
                 url: self.IP_SERVER + "login",

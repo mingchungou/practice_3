@@ -4,9 +4,9 @@ var jwt = require("jsonwebtoken"),
 
 module.exports.createToken = function(user) {
 	var payload = {
-		sub: user.email
+		sub: user.name
 	};
-	
+
 	return jwt.sign(payload, TOKEN_SECRET);
 };
 
